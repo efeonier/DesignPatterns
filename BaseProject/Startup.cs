@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace BaseProject
 {
     public class Startup
-    {
+    {  
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
