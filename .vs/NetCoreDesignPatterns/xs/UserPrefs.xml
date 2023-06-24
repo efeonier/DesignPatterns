@@ -1,20 +1,25 @@
-﻿<Properties StartupConfiguration="{F262CDC9-C4B7-4D1A-B330-E346B051CB5C}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties StartupConfiguration="{4E2E439B-2B50-4E28-81B8-6BB726021652}|BaseProject">
+  <MonoDevelop.Ide.ItemProperties.WebApp.Strategy PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="NetCoreDesignPatterns" expanded="True" selected="True">
-            <Node name="BaseProject" expanded="True" />
+          <Node name="NetCoreDesignPatterns" expanded="True">
+            <Node name="WebApp.Strategy" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductsController.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BaseProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.BaseProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

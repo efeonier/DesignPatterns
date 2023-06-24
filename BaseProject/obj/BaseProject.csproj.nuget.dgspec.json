@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/BaseProject.csproj": {}
+    "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/BaseProject.csproj": {}
   },
   "projects": {
-    "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/BaseProject.csproj": {
+    "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/BaseProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/BaseProject.csproj",
+        "projectUniqueName": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/BaseProject.csproj",
         "projectName": "BaseProject",
-        "projectPath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/BaseProject.csproj",
+        "projectPath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/BaseProject.csproj",
         "packagesPath": "/Users/efeonier/.nuget/packages/",
-        "outputPath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/obj/",
+        "outputPath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -23,7 +23,7 @@
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     }

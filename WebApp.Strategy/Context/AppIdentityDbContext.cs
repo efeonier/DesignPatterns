@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WebApp.Strategy.Entities;
 
-namespace BaseProject.Models
+namespace WebApp.Strategy.Context
 {
     public class AppIdentityDbContext:IdentityDbContext<AppUser>
     {
@@ -13,7 +10,7 @@ namespace BaseProject.Models
         {
 
         }
-
+        public DbSet<Product> Products { get; set; }
 
     }
 }

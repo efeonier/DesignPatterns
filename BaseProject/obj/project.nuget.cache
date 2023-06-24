@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HLR/md6QXPCGgGRfn2gs1FB+HGAFHVL7hGND6FYJAIiAEV+SS6NVUby6Fk+dWtB1durMbKbT14d0bOCUzEXzZg==",
+  "dgSpecHash": "Hq5TVum8kElbVJItuem+oaVVZNV6ei7CSEo2xj0fVMU+RtWlJfvqFDPkXWZfk5YV3LChvDYat3vSf/CPZnWb8Q==",
   "success": true,
-  "projectFilePath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/NetCoreDesignPatterns/BaseProject/BaseProject.csproj",
+  "projectFilePath": "/Users/efeonier/Projects/Egitim/aspcoreDesignPatterns/BaseProject/BaseProject.csproj",
   "expectedPackageFiles": [
     "/Users/efeonier/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/efeonier/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
