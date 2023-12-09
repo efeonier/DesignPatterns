@@ -1,13 +1,25 @@
 ﻿<Properties StartupConfiguration="{4E2E439B-2B50-4E28-81B8-6BB726021652}|BaseProject">
-  <MonoDevelop.Ide.ItemProperties.WebApp.Strategy PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BaseProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApp.Strategy/Views/Settings/Index.cshtml">
+    <Files>
+      <File FileName="WebApp.Strategy/Entities/Settings.cs" />
+      <File FileName="WebApp.Strategy/Enums/EDatabaseType.cs" />
+      <File FileName="WebApp.Strategy/Controllers/SettingsController.cs" />
+      <File FileName="WebApp.Strategy/Views/Products/Index.cshtml" />
+      <File FileName="WebApp.Strategy/Views/Settings/Index.cshtml" Line="12" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="NetCoreDesignPatterns" expanded="True">
-            <Node name="WebApp.Strategy" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="ProductsController.cs" selected="True" />
+          <Node name="NetCoreDesignPatterns">
+            <Node name="WebApp.Strategy">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Settings" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -15,11 +27,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.BaseProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.WebApp.Strategy PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

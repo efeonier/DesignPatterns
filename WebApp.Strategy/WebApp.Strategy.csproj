@@ -30,6 +30,8 @@
     <None Remove="Services\" />
     <None Remove="Services\Abstract\" />
     <None Remove="Services\Concrete\" />
+    <None Remove="Enums\" />
+    <None Remove="Views\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
@@ -42,5 +44,7 @@
     <Folder Include="Services\" />
     <Folder Include="Services\Abstract\" />
     <Folder Include="Services\Concrete\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Views\Settings\" />
   </ItemGroup>
 </Project>
