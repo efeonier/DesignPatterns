@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApp.Strategy.Context;
 using WebApp.Strategy.Entities;
+using WebApp.Strategy.Repository.Abstract;
+using WebApp.Strategy.Repository.Concrete.MsSql;
 using WebApp.Strategy.Services.Abstract;
 using WebApp.Strategy.Services.Concrete;
 
@@ -24,22 +26,17 @@ namespace WebApp.Strategy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddDbContext<AppIdentityDbContext>(options =>
             {
                 var connectionString = Configuration.GetConnectionString("SqlServer");
-                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+                options.UseSqlServer(connectionString);
             });
 
-            services.AddIdentity<AppUser, IdentityRole>(options =>
-            {
+            services.AddIdentity<AppUser, IdentityRole>(options => { options.User.RequireUniqueEmail = true; })
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
 
-                options.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<AppIdentityDbContext>();
-
-
+            services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductService, ProductService>();
-
             services.AddControllersWithViews();
         }
 
@@ -56,6 +53,7 @@ namespace WebApp.Strategy
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

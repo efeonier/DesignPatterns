@@ -5,9 +5,9 @@ namespace WebApp.Strategy.Entities
 {
     public class Settings
     {
-        public static string claimDatabaseType = "databasetype";
+        public static string ClaimDatabaseType = "databasetype";
         public EDatabaseType DatabaseType;
-        public EDatabaseType GetDefaultDatabaseType => EDatabaseType.MySql;
+        public EDatabaseType GetDefaultDatabaseType => EDatabaseType.SqlServer;
     }
 }
 

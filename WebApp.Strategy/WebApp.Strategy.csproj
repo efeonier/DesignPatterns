@@ -36,9 +36,9 @@
   <ItemGroup>
     <Folder Include="Context\" />
     <Folder Include="Entities\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Repository\" />
     <Folder Include="Repository\Abstract\" />
-    <Folder Include="Repository\Concrete\" />
     <Folder Include="Repository\Concrete\MongoDb\" />
     <Folder Include="Repository\Concrete\MySql\" />
     <Folder Include="Services\" />
