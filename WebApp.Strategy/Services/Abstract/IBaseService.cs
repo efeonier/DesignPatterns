@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using WebApp.Strategy.Entities;
 
@@ -7,13 +9,10 @@ namespace WebApp.Strategy.Services.Abstract;
 
 public interface IBaseService<TEntity> where TEntity : class, IEntity
 {
-    IQueryable<TEntity> GetAll();
-
-    Task<TEntity> GetById(string id);
-
-    Task<TEntity> Save(TEntity entity);
-
-    Task Update(TEntity entity);
-
-    Task Delete(string id);
+    IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null);
+    Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate);
+    Task<TEntity> GetByIdAsync(string id);
+    Task<TEntity> AddAsync(TEntity entity);
+    Task<TEntity> UpdateAsync(string id, TEntity entity);
+    Task DeleteAsync(string id);
 }

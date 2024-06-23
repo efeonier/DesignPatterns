@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Strategy.Context;
@@ -13,12 +11,12 @@ namespace WebApp.Strategy.Repository.Concrete.MsSql
     {
         public ProductRepository(AppIdentityDbContext dbContext) : base(dbContext)
         {
-
         }
 
         public async Task<List<Product>> GetAllByUserId(string userId)
         {
-            return await GetAll().Where(x => x.Id == userId).ToListAsync();
+            var data = await Get(w => w.UserId == userId).ToListAsync();
+            return data;
         }
     }
 }

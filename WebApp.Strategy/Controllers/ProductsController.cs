@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +9,7 @@ using WebApp.Strategy.Services.Abstract;
 
 namespace WebApp.Strategy.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly IProductService _productService;
@@ -25,7 +25,8 @@ namespace WebApp.Strategy.Controllers
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            return View(await _productService.GetAllByUserId(user.Id));
+            var data = await _productService.GetAllByUserId(user.Id);
+            return View(data);
         }
 
         // GET: Products/Details/5
@@ -36,7 +37,7 @@ namespace WebApp.Strategy.Controllers
                 return NotFound();
             }
 
-            var product = await _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -63,9 +64,10 @@ namespace WebApp.Strategy.Controllers
                 var user = await _userManager.FindByNameAsync(User.Identity.Name);
                 product.UserId = user.Id;
                 product.CreateDate = DateTime.Now;
-                await _productService.Save(product);
+                await _productService.AddAsync(product);
                 return RedirectToAction(nameof(Index));
             }
+
             return View(product);
         }
 
@@ -77,11 +79,12 @@ namespace WebApp.Strategy.Controllers
                 return NotFound();
             }
 
-            var product = await _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
+
             return View(product);
         }
 
@@ -90,7 +93,9 @@ namespace WebApp.Strategy.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Price,Stock,UserId,CreateDate")] Product product)
+        public async Task<IActionResult> Edit(string id,
+            [Bind("Id,Name,Price,Stock,UserId,CreateDate")]
+            Product product)
         {
             if (id != product.Id)
             {
@@ -101,7 +106,7 @@ namespace WebApp.Strategy.Controllers
             {
                 try
                 {
-                    await _productService.Update(product);
+                    await _productService.UpdateAsync(id, product);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -114,8 +119,10 @@ namespace WebApp.Strategy.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(product);
         }
 
@@ -127,7 +134,7 @@ namespace WebApp.Strategy.Controllers
                 return NotFound();
             }
 
-            var product = await _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -141,18 +148,18 @@ namespace WebApp.Strategy.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-
-            var product = await _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product != null)
             {
-                await _productService.Delete(product.Id);
+                await _productService.DeleteAsync(product.Id);
             }
+
             return RedirectToAction(nameof(Index));
         }
 
         private async Task<bool> ProductExistsAsync(string id)
         {
-            return await _productService.GetById(id) != null;
+            return await _productService.GetByIdAsync(id) != null;
         }
     }
 }

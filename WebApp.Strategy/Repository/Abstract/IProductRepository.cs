@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApp.Strategy.Entities;
 
@@ -10,4 +9,3 @@ namespace WebApp.Strategy.Repository.Abstract
         Task<List<Product>> GetAllByUserId(string userId);
     }
 }
-

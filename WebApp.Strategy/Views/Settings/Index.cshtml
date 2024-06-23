@@ -1,11 +1,19 @@
-@page
-@model WebApp.Strategy.Views.Settings.IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Settings";
 }
+@using WebApp.Strategy.Enums
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebApp.Strategy.Models.SettingsModel
+<h1>Settings</h1>
+<div>
+    <form asp-controller="Settings" asp-action="ChangeDatabase" method="post">
+        <select asp-for="DatabaseType" name="DatabaseType"  asp-items="Html.GetEnumSelectList<EDatabaseType>()"></select>
+        <button type="submit" name="Update">Güncelle</button>
+    </form>
+</div>
 
-<h1>Index</h1>
+
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
