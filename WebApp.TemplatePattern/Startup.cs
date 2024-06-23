@@ -1,5 +1,5 @@
-using BaseProject.Context;
-using BaseProject.Entities;
+using WebApp.TemplatePattern.Context;
+using WebApp.TemplatePattern.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace BaseProject
+namespace WebApp.TemplatePattern
 {
     public class Startup
     {  
@@ -31,8 +31,8 @@ namespace BaseProject
 
             services.AddIdentity<AppUser, IdentityRole>(options => { options.User.RequireUniqueEmail = true; })
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
-
             
+
             services.AddControllersWithViews();
         }
 
