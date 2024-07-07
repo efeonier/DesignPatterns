@@ -1,5 +1,3 @@
-using System.Diagnostics.Metrics;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using WebApp.TemplatePattern.Entities;

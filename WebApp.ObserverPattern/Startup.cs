@@ -1,3 +1,5 @@
+using System.Reflection;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -7,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApp.ObserverPattern.Context;
 using WebApp.ObserverPattern.Entities;
-using WebApp.ObserverPattern.Observer;
 
 namespace WebApp.ObserverPattern
 {
@@ -32,15 +33,17 @@ namespace WebApp.ObserverPattern
             services.AddIdentity<AppUser, IdentityRole>(options => { options.User.RequireUniqueEmail = true; })
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
 
-            services.AddSingleton<UserObserverSubject>(sp =>
-            {
-                var userObserverSubject = new UserObserverSubject();
-                userObserverSubject.RegisterObserver(new UserObserverWriteToConsole(sp));
-                userObserverSubject.RegisterObserver(new UserObserverCreateDiscount(sp));
-                userObserverSubject.RegisterObserver(new UserObserverSendMail(sp));
+            // services.AddSingleton<UserObserverSubject>(sp =>
+            // {
+            //     var userObserverSubject = new UserObserverSubject();
+            //     userObserverSubject.RegisterObserver(new UserObserverWriteToConsole(sp));
+            //     userObserverSubject.RegisterObserver(new UserObserverCreateDiscount(sp));
+            //     userObserverSubject.RegisterObserver(new UserObserverSendMail(sp));
+            //
+            //     return userObserverSubject;
+            // });
 
-                return userObserverSubject;
-            });
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddControllersWithViews();
         }

@@ -1,5 +1,4 @@
-﻿using System;
-namespace WebApp.Strategy.Entities;
+﻿namespace WebApp.Strategy.Entities;
 
 public interface IEntity
 {

@@ -1,5 +1,4 @@
-﻿using System;
-namespace WebApp.Strategy.Enums
+﻿namespace WebApp.Strategy.Enums
 {
     public enum EDatabaseType
     {

@@ -1,5 +1,3 @@
-using System;
-
 namespace WebApp.ObserverPattern.Models
 {
     public class ErrorViewModel

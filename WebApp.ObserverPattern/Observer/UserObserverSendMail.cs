@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Mail;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApp.ObserverPattern.Context;
 using WebApp.ObserverPattern.Entities;
 
 namespace WebApp.ObserverPattern.Observer;
