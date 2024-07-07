@@ -1,5 +1,3 @@
-using WebApp.ObserverPattern.Context;
-using WebApp.ObserverPattern.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -7,11 +5,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.ObserverPattern.Context;
+using WebApp.ObserverPattern.Entities;
+using WebApp.ObserverPattern.Observer;
 
 namespace WebApp.ObserverPattern
 {
     public class Startup
-    {  
+    {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,7 +23,6 @@ namespace WebApp.ObserverPattern
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddDbContext<AppIdentityDbContext>(options =>
             {
                 var connectionString = Configuration.GetConnectionString("SqlServer");
@@ -32,7 +32,16 @@ namespace WebApp.ObserverPattern
             services.AddIdentity<AppUser, IdentityRole>(options => { options.User.RequireUniqueEmail = true; })
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
 
-            
+            services.AddSingleton<UserObserverSubject>(sp =>
+            {
+                var userObserverSubject = new UserObserverSubject();
+                userObserverSubject.RegisterObserver(new UserObserverWriteToConsole(sp));
+                userObserverSubject.RegisterObserver(new UserObserverCreateDiscount(sp));
+                userObserverSubject.RegisterObserver(new UserObserverSendMail(sp));
+
+                return userObserverSubject;
+            });
+
             services.AddControllersWithViews();
         }
 
@@ -49,6 +58,7 @@ namespace WebApp.ObserverPattern
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
