@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.CommandPattern", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ObserverPattern", "WebApp.ObserverPattern\WebApp.ObserverPattern.csproj", "{E342AFAB-86A7-4D45-87CF-410611805AF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebbApp.ChainResponsibility", "WebbApp.ChainResponsibility\WebbApp.ChainResponsibility.csproj", "{BD621C4F-22C0-4705-AD64-97120084E965}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E342AFAB-86A7-4D45-87CF-410611805AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E342AFAB-86A7-4D45-87CF-410611805AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E342AFAB-86A7-4D45-87CF-410611805AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD621C4F-22C0-4705-AD64-97120084E965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD621C4F-22C0-4705-AD64-97120084E965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD621C4F-22C0-4705-AD64-97120084E965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD621C4F-22C0-4705-AD64-97120084E965}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
