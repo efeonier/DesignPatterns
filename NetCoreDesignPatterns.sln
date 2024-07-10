@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.CommandPattern", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ObserverPattern", "WebApp.ObserverPattern\WebApp.ObserverPattern.csproj", "{E342AFAB-86A7-4D45-87CF-410611805AF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebbApp.ChainResponsibility", "WebbApp.ChainResponsibility\WebbApp.ChainResponsibility.csproj", "{BD621C4F-22C0-4705-AD64-97120084E965}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ChainResponsibility", "WebApp.ChainResponsibility\WebApp.ChainResponsibility.csproj", "{BD621C4F-22C0-4705-AD64-97120084E965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
