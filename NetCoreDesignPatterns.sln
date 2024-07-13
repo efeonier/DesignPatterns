@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1705.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProject", "BaseProject\BaseProject.csproj", "{F262CDC9-C4B7-4D1A-B330-E346B051CB5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Strategy", "WebApp.Strategy\WebApp.Strategy.csproj", "{4E2E439B-2B50-4E28-81B8-6BB726021652}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.StrategyPattern", "WebApp.StrategyPattern\WebApp.StrategyPattern.csproj", "{4E2E439B-2B50-4E28-81B8-6BB726021652}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.TemplatePattern", "WebApp.TemplatePattern\WebApp.TemplatePattern.csproj", "{9F7B3E20-AD45-4D3D-A33F-C07D9090B696}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ObserverPattern", "WebApp.ObserverPattern\WebApp.ObserverPattern.csproj", "{E342AFAB-86A7-4D45-87CF-410611805AF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ChainResponsibility", "WebApp.ChainResponsibility\WebApp.ChainResponsibility.csproj", "{BD621C4F-22C0-4705-AD64-97120084E965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.CompositePattern", "WebApp.CompositePattern\WebApp.CompositePattern.csproj", "{40459FD7-2D09-4CB5-B071-18ED8EC07639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{BD621C4F-22C0-4705-AD64-97120084E965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD621C4F-22C0-4705-AD64-97120084E965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD621C4F-22C0-4705-AD64-97120084E965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
