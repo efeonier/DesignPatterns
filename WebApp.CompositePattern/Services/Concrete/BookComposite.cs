@@ -6,11 +6,10 @@ using WebApp.CompositePattern.Services.Interfaces;
 
 namespace WebApp.CompositePattern.Services.Concrete;
 
-public class BookComposite : IComponent
-{
+public class BookComposite : IComponent {
     public int Id { get; set; }
     public string Name { get; set; }
-    private readonly List<IComponent> _components;
+    private List<IComponent> _components;
 
     public IReadOnlyCollection<IComponent> Components => _components;
 
@@ -41,13 +40,11 @@ public class BookComposite : IComponent
         var sb = new StringBuilder();
         sb.Append($"<div class='text-primary my-1'><a href='#' class='menu'>   {Name} ({Count()}) </a></div>");
 
-        if (!_components.Any())
-            return sb.ToString();
+        if (!_components.Any()) return sb.ToString();
 
         sb.Append("<ul class='list-group list-group-flush ms-3'>");
 
-        foreach (var item in _components)
-        {
+        foreach (var item in _components){
             sb.Append(item.Display());
         }
 
@@ -60,15 +57,12 @@ public class BookComposite : IComponent
     {
         var list = new List<SelectListItem> { new($"{line}{Name}", Id.ToString()) };
 
-        if (_components.Any(x => x is BookComposite))
-        {
+        if (_components.Exists(x => x is BookComposite)){
             line += " - ";
         }
 
-        _components.ForEach(x =>
-        {
-            if (x is BookComposite bookComposite)
-            {
+        _components.ForEach(x => {
+            if (x is BookComposite bookComposite){
                 list.AddRange(bookComposite.GetSelectListItems(line));
             }
         });

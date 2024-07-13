@@ -2,8 +2,7 @@ using WebApp.CompositePattern.Services.Interfaces;
 
 namespace WebApp.CompositePattern.Services.Concrete;
 
-public class BookComponent : IComponent
-{
+public class BookComponent : IComponent {
     public int Id { get; set; }
     public string Name { get; set; }
 
