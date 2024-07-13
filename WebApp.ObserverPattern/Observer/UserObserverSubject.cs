@@ -24,6 +24,9 @@ public class UserObserverSubject
 
     public void NotifyObservers(AppUser appUser)
     {
-        _userObservers.ForEach(x => { x.UserCreated(appUser); });
+        _userObservers.ForEach(x =>
+        {
+            x.UserCreated(appUser);
+        });
     }
 }

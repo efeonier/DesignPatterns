@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using WebApp.StrategyPattern.Entities;
 
-namespace WebApp.StrategyPattern.Repository.Abstract
+namespace WebApp.StrategyPattern.Repository.Abstract;
+
+public interface IProductRepository : IGenericRepository<Product>
 {
-    public interface IProductRepository : IGenericRepository<Product>
-    {
-        Task<List<Product>> GetAllByUserId(string userId);
-    }
+    Task<List<Product>> GetAllByUserId(string userId);
 }

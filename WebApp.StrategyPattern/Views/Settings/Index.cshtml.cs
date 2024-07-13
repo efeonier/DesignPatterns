@@ -1,13 +1,12 @@
 using System;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebApp.StrategyPattern.Views.Settings
+namespace WebApp.StrategyPattern.Views.Settings;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-            throw new NotSupportedException();
-        }
+        throw new NotSupportedException();
     }
 }

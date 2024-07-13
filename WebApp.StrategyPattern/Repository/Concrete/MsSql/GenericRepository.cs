@@ -9,7 +9,8 @@ using WebApp.StrategyPattern.Repository.Abstract;
 
 namespace WebApp.StrategyPattern.Repository.Concrete.MsSql;
 
-public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
+public class GenericRepository<TEntity> : IGenericRepository<TEntity>
+    where TEntity : class, IEntity
 {
     private readonly AppIdentityDbContext _dbContext;
 
@@ -20,9 +21,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
 
     public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null)
     {
-        return predicate == null
-            ? _dbContext.Set<TEntity>()
-            : _dbContext.Set<TEntity>().Where(predicate);
+        return predicate == null ? _dbContext.Set<TEntity>() : _dbContext.Set<TEntity>().Where(predicate);
     }
 
     public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate)

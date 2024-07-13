@@ -5,10 +5,13 @@ namespace WebApp.CommandPattern.Entities;
 
 public class Product
 {
-    [Key] 
+    [Key]
     public int Id { get; set; }
+
     public string Name { get; set; }
-    [Column(TypeName = "decimal(18,2)")] 
+
+    [Column(TypeName = "decimal(18,2)")]
     public decimal Price { get; set; }
+
     public int Stock { get; set; }
 }

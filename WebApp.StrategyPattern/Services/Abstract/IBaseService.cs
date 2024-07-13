@@ -6,7 +6,8 @@ using WebApp.StrategyPattern.Entities;
 
 namespace WebApp.StrategyPattern.Services.Abstract;
 
-public interface IBaseService<TEntity> where TEntity : class, IEntity
+public interface IBaseService<TEntity>
+    where TEntity : class, IEntity
 {
     IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate = null);
     Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate);

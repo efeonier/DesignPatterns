@@ -8,7 +8,8 @@ public class ZipFileProcessHandler<T> : ProcessHandler
 {
     public override object Handle(object o)
     {
-        if (o is not MemoryStream excelMs) return base.Handle(o);
+        if (o is not MemoryStream excelMs)
+            return base.Handle(o);
 
         excelMs.Position = 0;
         using var zipStream = new MemoryStream();

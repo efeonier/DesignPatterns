@@ -2,6 +2,4 @@
 
 namespace WebApp.ObserverPattern.Entities;
 
-public class AppUser : IdentityUser
-{
-}
+public class AppUser : IdentityUser { }

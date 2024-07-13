@@ -9,6 +9,7 @@ namespace WebApp.ObserverPattern.EventHandlers;
 public class CreatedUserWriteToConsoleEventHandler : INotificationHandler<UserCreatedEvent>
 {
     private readonly ILogger<CreatedUserWriteToConsoleEventHandler> _logger;
+
     public CreatedUserWriteToConsoleEventHandler(ILogger<CreatedUserWriteToConsoleEventHandler> logger)
     {
         _logger = logger;

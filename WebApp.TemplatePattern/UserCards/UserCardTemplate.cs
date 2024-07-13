@@ -16,9 +16,7 @@ public abstract class UserCardTemplate
     public string Build()
     {
         if (AppUser is null)
-        {
             throw new ArgumentNullException(nameof(AppUser));
-        }
 
         var sb = new StringBuilder();
         sb.Append("<div class='card'>");

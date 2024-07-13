@@ -11,32 +11,19 @@ namespace WebApp.TemplatePattern.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Products");
+            migrationBuilder.DropTable(name: "Products");
 
-            migrationBuilder.AddColumn<string>(
-                name: "Description",
-                table: "AspNetUsers",
-                type: "nvarchar(max)",
-                nullable: true);
+            migrationBuilder.AddColumn<string>(name: "Description", table: "AspNetUsers", type: "nvarchar(max)", nullable: true);
 
-            migrationBuilder.AddColumn<string>(
-                name: "PictureUrl",
-                table: "AspNetUsers",
-                type: "nvarchar(max)",
-                nullable: true);
+            migrationBuilder.AddColumn<string>(name: "PictureUrl", table: "AspNetUsers", type: "nvarchar(max)", nullable: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Description",
-                table: "AspNetUsers");
+            migrationBuilder.DropColumn(name: "Description", table: "AspNetUsers");
 
-            migrationBuilder.DropColumn(
-                name: "PictureUrl",
-                table: "AspNetUsers");
+            migrationBuilder.DropColumn(name: "PictureUrl", table: "AspNetUsers");
 
             migrationBuilder.CreateTable(
                 name: "Products",
@@ -52,7 +39,8 @@ namespace WebApp.TemplatePattern.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
-                });
+                }
+            );
         }
     }
 }

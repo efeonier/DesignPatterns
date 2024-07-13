@@ -2,8 +2,4 @@
 
 namespace WebApp.StrategyPattern.Entities;
 
-public class AppUser : IdentityUser, IEntity
-{
-
-
-}
+public class AppUser : IdentityUser, IEntity { }

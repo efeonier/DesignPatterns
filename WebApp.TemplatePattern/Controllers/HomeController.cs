@@ -8,43 +8,40 @@ using Microsoft.Extensions.Logging;
 using WebApp.TemplatePattern.Entities;
 using WebApp.TemplatePattern.Models;
 
-namespace WebApp.TemplatePattern.Controllers
+namespace WebApp.TemplatePattern.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+    private readonly UserManager<AppUser> _userManager;
+
+    public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<AppUser> _userManager;
+        _logger = logger;
+        _userManager = userManager;
+    }
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
+    public async Task<IActionResult> Index()
+    {
+        var userList = await _userManager.Users.ToListAsync();
+        if (User.Identity.IsAuthenticated)
         {
-            _logger = logger;
-            _userManager = userManager;
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user is not null)
+                userList = userList.Where(w => w.Id != user.Id).ToList();
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var userList = await _userManager.Users.ToListAsync();
-            if (User.Identity.IsAuthenticated)
-            {
-                var user = await _userManager.FindByNameAsync(User.Identity.Name);
-                if (user is not null)
-                {
-                    userList = userList.Where(w => w.Id != user.Id).ToList();
-                }
-            }
+        return View(userList);
+    }
 
-            return View(userList);
-        }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

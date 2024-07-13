@@ -21,11 +21,7 @@ public class CreateDiscountEventHandler : INotificationHandler<UserCreatedEvent>
 
     public async Task Handle(UserCreatedEvent notification, CancellationToken cancellationToken)
     {
-        await _context.Discounts.AddAsync(new Discount
-        {
-            UserId = notification.AppUser.Id,
-            Rate = 10
-        }, cancellationToken);
+        await _context.Discounts.AddAsync(new Discount { UserId = notification.AppUser.Id, Rate = 10 }, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
         _logger.LogInformation("User Created. Add Discount");
     }

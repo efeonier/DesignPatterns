@@ -2,14 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using WebApp.StrategyPattern.Entities;
 
-namespace WebApp.StrategyPattern.Context
-{
-    public class AppIdentityDbContext : IdentityDbContext<AppUser>
-    {
-        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
-        {
-        }
+namespace WebApp.StrategyPattern.Context;
 
-        public DbSet<Product> Products { get; init; }
-    }
+public class AppIdentityDbContext : IdentityDbContext<AppUser>
+{
+    public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options)
+        : base(options) { }
+
+    public DbSet<Product> Products { get; init; }
 }

@@ -2,12 +2,9 @@
 using System.Threading.Tasks;
 using WebApp.StrategyPattern.Entities;
 
-namespace WebApp.StrategyPattern.Services.Abstract
+namespace WebApp.StrategyPattern.Services.Abstract;
+
+public interface IProductService : IBaseService<Product>
 {
-    public interface IProductService : IBaseService<Product>
-    {
-        Task<List<Product>> GetAllByUserId(string userId);
-
-    }
+    Task<List<Product>> GetAllByUserId(string userId);
 }
-

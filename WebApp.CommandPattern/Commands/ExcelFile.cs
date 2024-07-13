@@ -10,14 +10,14 @@ public class ExcelFile<T>
 {
     private readonly List<T> _list;
 
-    public string FileName => $"{typeof(T).Name}.xlsx";
-
-    public string FileType => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-
     public ExcelFile(List<T> list)
     {
         _list = list;
     }
+
+    public string FileName => $"{typeof(T).Name}.xlsx";
+
+    public string FileType => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
     private DataTable GetTable()
     {

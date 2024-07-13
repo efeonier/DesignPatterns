@@ -14,7 +14,6 @@ public class CreatePdfTableActionCommand<T> : ITableActionCommand
     public IActionResult Execute()
     {
         var pdfMemoryStream = _pdfFile.Create();
-        return new FileContentResult(pdfMemoryStream.ToArray(), _pdfFile.FileType)
-            { FileDownloadName = _pdfFile.FileName };
+        return new FileContentResult(pdfMemoryStream.ToArray(), _pdfFile.FileType) { FileDownloadName = _pdfFile.FileName };
     }
 }

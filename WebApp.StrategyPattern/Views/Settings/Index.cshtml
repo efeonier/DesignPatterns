@@ -1,17 +1,16 @@
 @{
     ViewData["Title"] = "Settings";
 }
-@using WebApp.StrategyPattern.Enums
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model WebApp.StrategyPattern.Models.SettingsModel
+@using WebApp.StrategyPattern.Enums
+@model SettingsModel
 <h1>Settings</h1>
 <div>
     <form asp-controller="Settings" asp-action="ChangeDatabase" method="post">
-        <select asp-for="DatabaseType" name="DatabaseType"  asp-items="Html.GetEnumSelectList<EDatabaseType>()"></select>
+        <select asp-for="DatabaseType" name="DatabaseType" asp-items="Html.GetEnumSelectList<EDatabaseType>()"></select>
         <button type="submit" name="Update">Güncelle</button>
     </form>
 </div>
-
 
 
 @section Scripts {

@@ -2,6 +2,4 @@
 
 namespace WebApp.CommandPattern.Entities;
 
-public class AppUser : IdentityUser
-{
-}
+public class AppUser : IdentityUser { }

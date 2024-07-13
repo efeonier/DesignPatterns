@@ -6,8 +6,8 @@ namespace WebApp.CommandPattern.Commands;
 
 public class FileCreateInvoker
 {
-    private ITableActionCommand _tableActionCommand;
     private readonly List<ITableActionCommand> _tableActionCommands = new();
+    private ITableActionCommand _tableActionCommand;
 
     public void SetCommand(ITableActionCommand tableActionCommand)
     {

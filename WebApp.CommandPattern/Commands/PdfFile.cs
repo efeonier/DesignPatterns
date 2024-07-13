@@ -11,11 +11,9 @@ namespace WebApp.CommandPattern.Commands;
 
 public class PdfFile<T>
 {
-    public string FileName => $"{typeof(T).Name}.pdf";
-    public string FileType => "application/octed-stream";
+    private readonly HttpContext _context;
 
     private readonly List<T> _list;
-    private readonly HttpContext _context;
 
     public PdfFile(List<T> list, HttpContext context)
     {
@@ -23,17 +21,22 @@ public class PdfFile<T>
         _context = context;
     }
 
+    public string FileName => $"{typeof(T).Name}.pdf";
+    public string FileType => "application/octed-stream";
+
     public MemoryStream Create()
     {
         var type = typeof(T);
         var sb = new StringBuilder();
-        sb.Append($"""
-                   <html>
-                           <head></head>
-                           <body>
-                           <div class='text-center'><h1>{type.Name} Tablo</h1></div>
-                           <table class='table table-stripped' align='center'>
-                   """);
+        sb.Append(
+            $"""
+            <html>
+                    <head></head>
+                    <body>
+                    <div class='text-center'><h1>{type.Name} Tablo</h1></div>
+                    <table class='table table-stripped' align='center'>
+            """
+        );
         sb.Append("<tr>");
         type.GetProperties().ToList().ForEach(x => sb.Append($"<th>{x.Name}</th>"));
         sb.Append("</tr>");
@@ -46,33 +49,36 @@ public class PdfFile<T>
             sb.Append("</tr>");
         });
 
-        sb.Append($"""
-                   </table>
-                           </body>
-                           </html>
-                   """);
+        sb.Append(
+            """
+            </table>
+                    </body>
+                    </html>
+            """
+        );
 
-        var doc = new HtmlToPdfDocument()
+        var doc = new HtmlToPdfDocument
         {
             GlobalSettings =
             {
                 ColorMode = ColorMode.Grayscale,
                 Orientation = Orientation.Portrait,
-                PaperSize = PaperKind.A4,
+                PaperSize = PaperKind.A4
             },
             Objects =
             {
-                new ObjectSettings()
+                new ObjectSettings
                 {
                     PagesCount = true,
                     HtmlContent = sb.ToString(),
-                    WebSettings =
+                    WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "/wwwroot/lib/bootstrap/dist/css/bootstrap.css") },
+                    HeaderSettings =
                     {
-                        DefaultEncoding = "utf-8",
-                        UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(),
-                            "/wwwroot/lib/bootstrap/dist/css/bootstrap.css")
-                    },
-                    HeaderSettings = { FontSize = 9, Right = "Page [page] of [toPage]", Line = true, Spacing = 2.812 }
+                        FontSize = 9,
+                        Right = "Page [page] of [toPage]",
+                        Line = true,
+                        Spacing = 2.812
+                    }
                 }
             }
         };

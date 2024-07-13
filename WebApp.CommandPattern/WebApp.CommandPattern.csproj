@@ -6,7 +6,7 @@
 
 
     <ItemGroup>
-        <None Remove="libwkhtmltox.dll" />
+        <None Remove="libwkhtmltox.dll"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -14,11 +14,11 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
     </ItemGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="ClosedXML" Version="0.102.2"/>
-        <PackageReference Include="DinkToPdf" Version="1.0.8" />
-        <PackageReference Include="Libgdiplus.rntime.osx_arm64" Version="6.1.2" />
+        <PackageReference Include="DinkToPdf" Version="1.0.8"/>
+        <PackageReference Include="Libgdiplus.rntime.osx_arm64" Version="6.1.2"/>
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5"/>
@@ -38,5 +38,5 @@
         <Folder Include="Migrations\"/>
     </ItemGroup>
 
-   
+
 </Project>

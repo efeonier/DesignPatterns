@@ -18,15 +18,11 @@ public class UserObserverCreateDiscount : IUserObserver
     public void UserCreated(AppUser appUser)
     {
         var logger = _serviceProvider.GetRequiredService<ILogger<UserObserverCreateDiscount>>();
-        
+
         using (var scoped = _serviceProvider.CreateScope())
         {
             var context = scoped.ServiceProvider.GetRequiredService<AppIdentityDbContext>();
-            context.Discounts.Add(new Discount
-            {
-                UserId = appUser.Id,
-                Rate = 10
-            });
+            context.Discounts.Add(new Discount { UserId = appUser.Id, Rate = 10 });
             context.SaveChanges();
         }
 

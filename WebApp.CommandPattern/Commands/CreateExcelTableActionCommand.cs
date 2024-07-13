@@ -14,7 +14,6 @@ public class CreateExcelTableActionCommand<T> : ITableActionCommand
     public IActionResult Execute()
     {
         var excelMemoryStream = _excelFile.Create();
-        return new FileContentResult(excelMemoryStream.ToArray(), _excelFile.FileType)
-            { FileDownloadName = _excelFile.FileName };
+        return new FileContentResult(excelMemoryStream.ToArray(), _excelFile.FileType) { FileDownloadName = _excelFile.FileName };
     }
 }
