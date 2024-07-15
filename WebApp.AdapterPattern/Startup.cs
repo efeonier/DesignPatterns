@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.AdapterPattern.Adapter;
+using WebApp.AdapterPattern.Services.Concretes;
+using WebApp.AdapterPattern.Services.Interfaces;
 
 namespace WebApp.AdapterPattern;
 
@@ -35,6 +38,9 @@ public class Startup
             })
             .AddEntityFrameworkStores<AppIdentityDbContext>();
 
+        services.AddScoped<IAdvanceImageProcess, AdvanceImageProcess>();
+        services.AddScoped<IImageProcess, AdvanceImageProcessAdapter>();
+        
         services.AddControllersWithViews();
     }
 
