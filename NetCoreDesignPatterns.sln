@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.ChainResponsibility"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.CompositePattern", "WebApp.CompositePattern\WebApp.CompositePattern.csproj", "{40459FD7-2D09-4CB5-B071-18ED8EC07639}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DecoratorPattern", "WebApp.DecoratorPattern\WebApp.DecoratorPattern.csproj", "{7984B2D3-DB4B-4A32-A1C2-779210858768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40459FD7-2D09-4CB5-B071-18ED8EC07639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7984B2D3-DB4B-4A32-A1C2-779210858768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7984B2D3-DB4B-4A32-A1C2-779210858768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7984B2D3-DB4B-4A32-A1C2-779210858768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7984B2D3-DB4B-4A32-A1C2-779210858768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

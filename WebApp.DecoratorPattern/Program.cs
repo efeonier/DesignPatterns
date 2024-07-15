@@ -1,16 +1,17 @@
 using System.Linq;
-using BaseProject.Context;
-using BaseProject.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.DecoratorPattern.Context;
+using WebApp.DecoratorPattern.Entities;
 
-namespace BaseProject;
+namespace WebApp.DecoratorPattern;
 
 public static class Program {
     private const string Password = "Password12*";
+
     public static void Main(string[] args)
     {
         var host = CreateHostBuilder(args).Build();
