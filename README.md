@@ -1,6 +1,6 @@
 Udemy Fatih Çakıroğlu eğitimi: https://www.udemy.com/course/aspnet-core-ile-design-patterns
 
-Bu eğitim ile beraber, 
+Bu eğitim ile beraber öğrenilen içerikler;
    * Strategy Design Pattern
    * Template Design Pattern
    * Command Design Pattern
